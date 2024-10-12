@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DomainWatch</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        section {
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        .result-list {
+            display: flex;
+            justify-content: space-between;
+        }
+        .result-list div {
+            width: 22%;
+            background-color: #f4f4f4;
+            padding: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="container">
+        <a href="#home">首页</a>
+        <a href="#anomaly-detection">异常检测</a>
+        <a href="#datasets">数据集</a>
+    </div>
+</nav>
+
+<section id="home">
+    <div class="container">
+        <h1>DomainWatch 项目介绍</h1>
+        <p>DomainWatch 是一个项目，旨在通过长时间、高频率、大规模监测域名资源记录，
+           解决现有数据集难以观测到资源记录短时间异常变动现象的问题，并致力于完善权威侧隐蔽劫持检测工作。
+           同时，为研究人员提供 DNS 主动测量数据集，用于科学研究。</p>
+    </div>
+</section>
+
+<section id="anomaly-detection">
+    <div class="container">
+        <h2>最新一次的异常检测结果</h2>
+        <div class="result-list">
+            <div>
+                <h3>IP变动列表</h3>
+                <!-- Add IP change data here -->
+            </div>
+            <div>
+                <h3>AS变动列表</h3>
+                <!-- Add AS change data here -->
+            </div>
+            <div>
+                <h3>证书变动列表</h3>
+                <!-- Add Certificate change data here -->
+            </div>
+            <div>
+                <h3>页面变动列表</h3>
+                <!-- Add Page change data here -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="datasets">
+    <div class="container">
+        <h2>数据集</h2>
+        <form id="dataset-form">
+            <label for="domain-input">输入域名：</label>
+            <input type="text" id="domain-input" name="domain" placeholder="example.com">
+
+            <label for="record-type">选择方案：</label>
+            <select id="record-type" name="record-type">
+                <option value="A">A</option>
+                <option value="NS">NS</option>
+                <option value="AAAA">AAAA</option>
+                <option value="SOA">SOA</option>
+                <option value="MX">MX</option>
+                <option value="CNAME">CNAME</option>
+            </select>
+
+            <button type="submit">查询</button>
+        </form>
+        <div id="results">
+            <!-- Results will be displayed here -->
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
